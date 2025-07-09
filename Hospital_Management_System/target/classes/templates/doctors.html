@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Meet Our Doctors</title>
+    <style>
+        body {
+            font-family: Arial, serif;
+            background-image: url('https://st4.depositphotos.com/9999814/22690/i/450/depositphotos_226904298-stock-photo-male-doctor-using-mobile-phone.jpg');
+            background-size: 100% 180%;
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            padding: 50px;
+        }
+        table {
+            width: 90%;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        th, td {
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .back-btn {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meet Our Doctors</h1>
+    <table border="4">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Available From</th>
+            <th>Available To</th>
+        </tr>
+        <tr th:each="doc : ${doctors}">
+            <td th:text="${doc.doctorId}"></td>
+            <td th:text="${doc.doctorName}"></td>
+            <td th:text="${doc.doctorSpecialization}"></td>
+            <td th:text="${doc.doctorEmail}"></td>
+            <td th:text="${doc.doctorPhno}"></td>
+            <td th:text="${doc.startTime}"></td>
+            <td th:text="${doc.endTime}"></td>
+        </tr>
+    </table>
+    <a href="/home" class="back-btn">Click Back To Home</a>
+</body>
+</html>

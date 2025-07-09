@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            font-family: Arial, serif;
+            background-image: url('https://st2.depositphotos.com/2065849/7805/i/450/depositphotos_78050610-stock-photo-hospital-through-the-eyes-of.jpg');
+            background-size: 100% 180%;
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .banner {
+            background-color: #e74c3c; /* Rich red background */
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .banner h1 {
+            color: #ffffff; /* White text for contrast */
+            margin: 0;
+            font-size: 2.8em;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .menu {
+            margin-top: 40px;
+        }
+
+        .menu a {
+            display: block;
+            margin: 15px auto;
+            padding: 15px 30px;
+            width: 250px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #2980b9;
+        }
+
+        #contactPopup {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: white;
+            padding: 25px;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            z-index: 9999;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            width: 300px;
+            text-align: left;
+        }
+
+        #contactPopup h2 {
+            color: #2c3e50;
+        }
+
+        #contactPopup button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contactPopup button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔴 Banner with Welcome Heading -->
+    <div class="banner">
+        <h1>Welcome to SVDY Hospital Portal</h1>
+    </div>
+
+   
+    <div class="menu">
+        <a href="/doctors">Our Doctors</a>
+        <a href="/addpatient">Add Patient Details</a>
+        <a href="/patientlist">View Patient List</a>
+        <a href="javascript:void(0)" onclick="openPopup()">Contact Us</a>
+    </div>
+
+    
+    <div id="contactPopup">
+        <h2>Contact Us</h2>
+        <p><strong>Email:</strong> svdy.support@hospital.com</p>
+        <p><strong>Phone:</strong> 9059993952</p>
+        <p><strong>Address:</strong> 27-B, Health Street, Coimbatore, TamilNadu</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- 🚀 Popup Script -->
+    <script>
+        function openPopup() {
+            document.getElementById("contactPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("contactPopup").style.display = "none";
+        }
+    </script>
+</body>
+</html>

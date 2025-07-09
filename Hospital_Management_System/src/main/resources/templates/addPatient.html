@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Patient</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">Add New Patient</h1>
+    <form th:action="@{/save}" th:object="${patient}" method="post">
+       
+        <!-- Patient Name -->
+        <label for="patient_name">Name</label>
+        <input type="text" id="patient_name" th:field="*{patient_name}" required= "required" placeholder="Enter patient's name" />
+
+        <!-- Patient Email -->
+        <label for="patient_email">Email</label>
+        <input type="email" id="patient_email" th:field="*{patient_email}" required="required" placeholder="Enter patient's email" />
+
+        <!-- Patient Password -->
+        <label for="patient_password">Password</label>
+        <input type="password" id="patient_password" th:field="*{patient_password}" required="required" placeholder="Enter patient's password" />
+
+        <!-- Patient Age -->
+        <label for="patient_age">Age</label>
+        <input type="number" id="patient_age" th:field="*{patient_age}" required="required" placeholder="Enter patient's age" />
+
+        <!-- Blood Group -->
+        <label for="patient_bloodgroup">Blood Group</label>
+        <input type="text" id="patient_bloodgroup" th:field="*{patient_bloodgroup}" required="required" placeholder="Enter blood group" />
+
+        <!-- Gender -->
+        <label for="patient_gender">Gender</label>
+        <input type="text" id="patient_gender" th:field="*{patient_gender}" required="required" placeholder="Enter gender" />
+	
+         <button type="submit">Save Patient</button>
+    </form>
+
+</body>
+</html>
